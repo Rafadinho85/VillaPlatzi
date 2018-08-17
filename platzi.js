@@ -1,11 +1,16 @@
-var z;
+var vp = document.getElementById("villaplatzi");
+var papel = vp.getContext("2d");
+var mapa ="tile.png";
 
-for (var i = 0; i < 10; i++) {
-  z = aleatorio(10, 20);
-  document.write(z + ", ");
+var imagen = new Image();
+imagen.src = mapa;
+imagen.addEventListener("load", dibujar);
 
-
+function dibujar ()
+{
+papel.drawImage(imagen, 0, 0);  
 }
+
 
 function aleatorio (min, maxi)
 {
@@ -13,3 +18,13 @@ function aleatorio (min, maxi)
   resultado = Math.floor(Math.random() * (maxi - min + 1)) + min;
   return resultado;
 }
+
+
+
+
+//for (var i = 0; i < 10; i++) {
+  //z = aleatorio(10, 20);
+  //document.write(z + ", ");
+
+
+//}
