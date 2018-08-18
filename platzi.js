@@ -32,20 +32,24 @@ function cargarVaca(){
 
 function dibujar ()
 {
-  var x = aleatorio(0, 420);
-  var y = aleatorio(0, 420);
 
   if (fondo.cargaOK) {
 
   papel.drawImage(fondo.imagen, 0, 0);
   }
   if (vaca.cargaOK) {
+    var cantidad = aleatorio (0, 5);
+    console.log(cantidad);
+    for (var i = 0; i <cantidad; i++)
+    {
 
-  papel.drawImage(vaca.imagen, x, y);
+      var x = aleatorio(0, 420);
+      var y = aleatorio(0, 420);
+      papel.drawImage(vaca.imagen, x, y);
+
+    }
   }
-
 }
-
 
 
 function aleatorio (min, maxi)
