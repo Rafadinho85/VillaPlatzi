@@ -26,7 +26,7 @@ function cargarFondo(){
 }
 
 function cargarVaca(){
-  fondo.cargaOK =true;
+  vaca.cargaOK =true;
   dibujar();
 }
 
@@ -37,6 +37,11 @@ function dibujar ()
 
   papel.drawImage(fondo.imagen, 0, 0);
   }
+  if (vaca.cargaOK) {
+
+  papel.drawImage(vaca.imagen, 100, 100);
+  }
+
 }
 
 
