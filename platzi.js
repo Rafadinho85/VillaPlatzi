@@ -32,6 +32,8 @@ function cargarVaca(){
 
 function dibujar ()
 {
+  var x = aleatorio(0, 420);
+  var y = aleatorio(0, 420);
 
   if (fondo.cargaOK) {
 
@@ -39,7 +41,7 @@ function dibujar ()
   }
   if (vaca.cargaOK) {
 
-  papel.drawImage(vaca.imagen, 100, 100);
+  papel.drawImage(vaca.imagen, x, y);
   }
 
 }
