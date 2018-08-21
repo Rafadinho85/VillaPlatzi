@@ -11,6 +11,16 @@ var vaca = {
   cargaOK:false
 };
 
+var cerdo = {
+  url: "cerdo.png",
+  cargaOK: false
+}
+
+var pollo = {
+  url:"pollo.png",
+  cargaOk:false
+}
+
 fondo.imagen = new Image();
 fondo.imagen.src = fondo.url;
 fondo.imagen.addEventListener("load", cargarFondo);
@@ -18,6 +28,14 @@ fondo.imagen.addEventListener("load", cargarFondo);
 vaca.imagen = new Image();
 vaca.imagen.src = vaca.url;
 vaca.imagen.addEventListener("load", cargarVaca);
+
+cerdo.imagen = new Image();
+cerdo.imagen.src = cerdo.url;
+cerdo.imagen.addEventListener("load", cargarCerdo);
+
+pollo.imagen = new Image();
+pollo.imagen.src = pollo.url;
+pollo.imagen.addEventListener("load", cargarPollo);
 
 function cargarFondo(){
   fondo.cargaOK =true;
@@ -30,6 +48,18 @@ function cargarVaca(){
   dibujar();
 }
 
+function cargarCerdo(){
+    cerdo.cargaOk = true;
+    dibujar();
+
+  }
+
+function cargarPollo(){
+  pollo.cargaOK = true;
+  dibujar();
+
+}
+
 function dibujar ()
 {
 
@@ -38,17 +68,33 @@ function dibujar ()
   papel.drawImage(fondo.imagen, 0, 0);
   }
   if (vaca.cargaOK) {
-    var cantidad = aleatorio (0, 5);
+    var cantidad = aleatorio (0, 10);
     console.log(cantidad);
     for (var i = 0; i <cantidad; i++)
     {
 
-      var x = aleatorio(0, 420);
-      var y = aleatorio(0, 420);
+      var x = aleatorio(0, 220);
+      var y = aleatorio(0, 220);
       papel.drawImage(vaca.imagen, x, y);
 
     }
+    for (var i = 0; i < cantidad; i++) {
+      var x = aleatorio(220, 420);
+      var y = aleatorio(220, 420);
+      papel.drawImage(cerdo.imagen, x, y);
+
+    }
+
+    for (var i = 0; i < cantidad; i++)
+    {
+      var x = aleatorio(1, 420);
+      var y = aleatorio(1, 420);
+      papel.drawImage(pollo.imagen, x, y);
+    }
+
+
   }
+
 }
 
 
